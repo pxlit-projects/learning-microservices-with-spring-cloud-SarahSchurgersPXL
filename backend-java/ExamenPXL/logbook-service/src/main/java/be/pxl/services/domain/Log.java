@@ -18,6 +18,7 @@ public class Log {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private Long productId;
     private String message;
     private LocalDateTime timestamp;
     private String user;

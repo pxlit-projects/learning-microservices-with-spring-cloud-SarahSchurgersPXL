@@ -48,4 +48,14 @@ public class ProductService implements IProductService {
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
+
+    @Override
+    public Product getProductById(Long id) {
+        Optional<Product> optionalProduct = productRepository.findById(id);
+        if (optionalProduct.isPresent()) {
+            return optionalProduct.get();
+        } else {
+            throw new RuntimeException("Product not found");
+        }
+    }
 }
