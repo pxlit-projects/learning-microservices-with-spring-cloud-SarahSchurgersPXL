@@ -26,7 +26,8 @@
 		<module>shoppingcart-service</module>
 		<module>logbook-service</module>
         <module>discovery-service</module>
-    </modules>
+		<module>config-server</module>
+	</modules>
 	<scm>
 		<connection/>
 		<developerConnection/>

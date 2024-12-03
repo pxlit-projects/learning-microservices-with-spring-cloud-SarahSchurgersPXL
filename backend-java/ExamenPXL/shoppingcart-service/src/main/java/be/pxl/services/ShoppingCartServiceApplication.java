@@ -12,10 +12,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-public class ShoppingCartService
+public class ShoppingCartServiceApplication
 {
     public static void main( String[] args )
     {
-        SpringApplication.run(ShoppingCartService.class, args);
+        SpringApplication.run(ShoppingCartServiceApplication.class, args);
     }
 }

@@ -21,4 +21,13 @@ public class ShoppingCart {
 
     @OneToMany
     private List<ShoppingCartItem> items;
+
+    public void addProduct(Product product, int quantity) {
+        ShoppingCartItem item = new ShoppingCartItem();
+        item.setProduct(product);
+        item.setQuantity(quantity);
+        items.add(item);
+
+    }
+
 }
