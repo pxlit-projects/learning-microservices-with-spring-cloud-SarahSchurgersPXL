@@ -1,6 +1,5 @@
 package be.pxl.services.services;
 
-import be.pxl.services.client.LogClient;
 import be.pxl.services.domain.Product;
 import be.pxl.services.dto.ProductDto;
 import be.pxl.services.dto.LogDto;
@@ -9,6 +8,7 @@ import be.pxl.services.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +24,7 @@ public class ProductService implements IProductService {
     private static final Logger logger = LoggerFactory.getLogger(ProductService.class);
 
     @Autowired
-    LogClient logClient;
+    private RabbitTemplate rabbitTemplate;
 
     @Override
     public void addProduct(ProductDto productDto) {
@@ -37,7 +37,7 @@ public class ProductService implements IProductService {
                 .build();
         productRepository.save(product);
         LogDto logDtp = new LogDto(product.getId(), "Product added", LocalDateTime.now(), "admin");
-        logClient.addLog(logDtp);
+        rabbitTemplate.convertAndSend("LogbookQueue", logDtp);
         logger.info("added product: " + product.getName() + " with id: " + product.getId());
     }
 
@@ -72,7 +72,7 @@ public class ProductService implements IProductService {
             if (isUpdated) {
                 productRepository.save(product);
                 LogDto logDtp = new LogDto(product.getId(), "Product updated", LocalDateTime.now(), "admin");
-                logClient.addLog(logDtp);
+                rabbitTemplate.convertAndSend("LogbookQueue", logDtp);
                 logger.info("updated product: " + product.getName() + " with id: " + product.getId());
             } else {
                 logger.info("no changes detected for product with id: " + product.getId());
@@ -94,8 +94,7 @@ public class ProductService implements IProductService {
         Optional<Product> optionalProduct = productRepository.findById(id);
         if (optionalProduct.isPresent()) {
             logger.info("retrieved product with id: " + id);
-            ProductResponseDto product = ProductResponseDto.from(optionalProduct.get());
-            return product;
+            return ProductResponseDto.from(optionalProduct.get());
         } else {
             logger.info("product with id: " + id + " not found");
             throw new RuntimeException("Product not found");
