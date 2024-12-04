@@ -2,10 +2,13 @@ package be.pxl.services.services;
 
 import be.pxl.services.client.LogClient;
 import be.pxl.services.domain.Product;
-import be.pxl.services.domain.ProductDto;
+import be.pxl.services.dto.ProductDto;
 import be.pxl.services.dto.LogDto;
+import be.pxl.services.dto.ProductResponseDto;
 import be.pxl.services.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +21,7 @@ import java.util.Optional;
 public class ProductService implements IProductService {
 
     private final ProductRepository productRepository;
+    private static final Logger logger = LoggerFactory.getLogger(ProductService.class);
 
     @Autowired
     LogClient logClient;
@@ -34,7 +38,7 @@ public class ProductService implements IProductService {
         productRepository.save(product);
         LogDto logDtp = new LogDto(product.getId(), "Product added", LocalDateTime.now(), "admin");
         logClient.addLog(logDtp);
-
+        logger.info("added product: " + product.getName() + " with id: " + product.getId());
     }
 
     @Override
@@ -42,31 +46,58 @@ public class ProductService implements IProductService {
         Optional<Product> optionalProduct = productRepository.findById(id);
         if (optionalProduct.isPresent()) {
             Product product = optionalProduct.get();
-            product.setName(productDto.getName());
-            product.setDescription(productDto.getDescription());
-            product.setPrice(productDto.getPrice());
-            product.setCategory(productDto.getCategory());
-            product.setLabels(productDto.getLabels());
-            productRepository.save(product);
-            LogDto logDtp = new LogDto(product.getId(), "Product updated", LocalDateTime.now(), "admin");
-            logClient.addLog(logDtp);
+            boolean isUpdated = false;
 
+            if (!product.getName().equals(productDto.getName())) {
+                product.setName(productDto.getName());
+                isUpdated = true;
+            }
+            if (!product.getDescription().equals(productDto.getDescription())) {
+                product.setDescription(productDto.getDescription());
+                isUpdated = true;
+            }
+            if (product.getPrice() != productDto.getPrice()) {
+                product.setPrice(productDto.getPrice());
+                isUpdated = true;
+            }
+            if (!product.getCategory().equals(productDto.getCategory())) {
+                product.setCategory(productDto.getCategory());
+                isUpdated = true;
+            }
+            if (productDto.getLabels() != null && !product.getLabels().equals(productDto.getLabels())) {
+                product.setLabels(productDto.getLabels());
+                isUpdated = true;
+            }
+
+            if (isUpdated) {
+                productRepository.save(product);
+                LogDto logDtp = new LogDto(product.getId(), "Product updated", LocalDateTime.now(), "admin");
+                logClient.addLog(logDtp);
+                logger.info("updated product: " + product.getName() + " with id: " + product.getId());
+            } else {
+                logger.info("no changes detected for product with id: " + product.getId());
+            }
         } else {
             throw new RuntimeException("Product not found");
         }
     }
 
     @Override
-    public List<Product> getAllProducts() {
-        return productRepository.findAll();
+    public List<ProductResponseDto> getAllProducts() {
+        logger.info("retrieved all products");
+        List<Product> products = productRepository.findAll();
+        return ProductResponseDto.from(products);
     }
 
     @Override
-    public Product getProductById(Long id) {
+    public ProductResponseDto getProductById(Long id) {
         Optional<Product> optionalProduct = productRepository.findById(id);
         if (optionalProduct.isPresent()) {
-            return optionalProduct.get();
+            logger.info("retrieved product with id: " + id);
+            ProductResponseDto product = ProductResponseDto.from(optionalProduct.get());
+            return product;
         } else {
+            logger.info("product with id: " + id + " not found");
             throw new RuntimeException("Product not found");
         }
     }

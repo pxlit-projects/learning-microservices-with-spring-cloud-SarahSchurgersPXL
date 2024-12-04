@@ -27,7 +27,6 @@ public class ShoppingCart {
         item.setProduct(product);
         item.setQuantity(quantity);
         items.add(item);
-
     }
 
 }
