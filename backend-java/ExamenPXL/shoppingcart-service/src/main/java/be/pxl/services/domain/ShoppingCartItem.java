@@ -1,5 +1,6 @@
 package be.pxl.services.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,12 +16,15 @@ import lombok.NoArgsConstructor;
 public class ShoppingCartItem {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private Long productId;
     @Transient
     private Product product;
     private int quantity;
 
-    @ManyToOne()
+    @ManyToOne
+    @JsonIgnore
     private ShoppingCart shoppingCart;
 }

@@ -6,7 +6,7 @@ import be.pxl.services.dto.ShoppingCartDto;
 public interface IShoppingCartService {
     ShoppingCart addProductToCart(Long cartId, Long productId, int quantity);
     ShoppingCart removeProductFromCart(Long cartId, Long productId);
-
+    ShoppingCart createShoppingCart();
     ShoppingCartDto getShoppingCart(Long cartId);
 }
 

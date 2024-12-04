@@ -1,6 +1,7 @@
 package be.pxl.services;
 
 import be.pxl.services.dto.LogDto;
+import be.pxl.services.dto.LogDtoMessage;
 import be.pxl.services.service.LogbookService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -17,8 +18,10 @@ public class QueueService {
 
     @RabbitListener(queues = "LogbookQueue")
     public void listen(LogDto logDto) {
+
         logger.info("Log received: " + logDto.getMessage());
-        logbookService.addLog(logDto);
+        LogDto logDto2 = new LogDto(logDto.getProductId(), logDto.getMessage(), logDto.getTimestamp(), logDto.getUser());
+        logbookService.addLog(logDto2);
         logger.info("Log processed: " + logDto.getMessage());
     }
 }

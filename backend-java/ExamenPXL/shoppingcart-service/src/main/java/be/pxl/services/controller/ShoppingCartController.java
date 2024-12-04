@@ -1,6 +1,8 @@
 package be.pxl.services.controller;
 
 import be.pxl.services.domain.ShoppingCart;
+import be.pxl.services.dto.AddProductDto;
+import be.pxl.services.dto.DeleteProductDto;
 import be.pxl.services.dto.ShoppingCartDto;
 import be.pxl.services.services.IShoppingCartService;
 import lombok.RequiredArgsConstructor;
@@ -18,17 +20,17 @@ public class ShoppingCartController {
     private final IShoppingCartService shoppingCartService;
     private static final Logger logger = LoggerFactory.getLogger(ShoppingCartController.class);
 
-    @PostMapping("/{cartId}/addProduct/{productId}")
-    public ResponseEntity<ShoppingCart> addProductToCart(@PathVariable Long cartId, @PathVariable Long productId, @RequestParam int quantity) {
-        ShoppingCart updatedCart = shoppingCartService.addProductToCart(cartId, productId, quantity);
-        logger.info("received request to add product with id " + productId + " to cart with id " + cartId);
+    @PostMapping("/{cartId}")
+    public ResponseEntity<ShoppingCart> addProductToCart(@PathVariable int cartId, @RequestBody AddProductDto addProductDto) {
+        ShoppingCart updatedCart = shoppingCartService.addProductToCart((long) cartId, addProductDto.getProductId(), addProductDto.getQuantity());
+        logger.info("received request to add product with id " + addProductDto.getProductId() + " to cart with id " + cartId);
         return new ResponseEntity<>(updatedCart, HttpStatus.OK);
     }
 
-    @DeleteMapping("/{cartId}/removeProduct/{productId}")
-    public ResponseEntity<ShoppingCart> removeProductFromCart(@PathVariable Long cartId, @PathVariable Long productId) {
-        ShoppingCart updatedCart = shoppingCartService.removeProductFromCart(cartId, productId);
-        logger.info("received request to remove product with id " + productId + " from cart with id " + cartId);
+    @DeleteMapping("/{cartId}")
+    public ResponseEntity<ShoppingCart> removeProductFromCart(@PathVariable int cartId, @RequestBody DeleteProductDto productDto) {
+        ShoppingCart updatedCart = shoppingCartService.removeProductFromCart((long) cartId, productDto.getProductId());
+        logger.info("received request to remove product with id " + productDto.getProductId() + " from cart with id " + cartId);
         return new ResponseEntity<>(updatedCart ,HttpStatus.OK);
     }
 
@@ -38,4 +40,12 @@ public class ShoppingCartController {
         logger.info("received request to get cart with id " + cartId);
         return new ResponseEntity<>(cart, HttpStatus.OK);
     }
+
+    @PostMapping
+    public ResponseEntity<ShoppingCart> createNewCart() {
+        ShoppingCart newCart = shoppingCartService.createShoppingCart();
+        logger.info("received request to create a new cart");
+        return new ResponseEntity<>(newCart, HttpStatus.CREATED);
+    }
+
 }

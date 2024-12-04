@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -27,6 +27,8 @@ public class Product {
     private Category category;
 
     @ElementCollection
+    @CollectionTable(name = "product_label", joinColumns = @JoinColumn(name = "product_id"))
+    @Column(name = "label")
     private List<String> labels;
 
 }

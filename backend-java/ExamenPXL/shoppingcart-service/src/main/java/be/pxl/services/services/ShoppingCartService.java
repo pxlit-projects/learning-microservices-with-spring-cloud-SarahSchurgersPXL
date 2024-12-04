@@ -3,6 +3,7 @@ package be.pxl.services.services;
 import be.pxl.services.client.ProductClient;
 import be.pxl.services.domain.Product;
 import be.pxl.services.domain.ShoppingCart;
+import be.pxl.services.domain.ShoppingCartItem;
 import be.pxl.services.dto.ShoppingCartDto;
 import be.pxl.services.repository.ShoppingCartRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,26 +22,35 @@ public class ShoppingCartService implements IShoppingCartService {
     private static final Logger logger = LoggerFactory.getLogger(ShoppingCartService.class);
 
     @Autowired
-    ProductClient productClient;
+    private ProductClient productClient;
 
     @Override
     public ShoppingCart addProductToCart(Long cartId, Long productId, int quantity) {
         Optional<ShoppingCart> optionalCart = shoppingCartRepository.findById(cartId);
-        if (optionalCart.isPresent()) {
-            ShoppingCart cart = optionalCart.get();
-            Product product = productClient.getProductById(productId);
-            if(product == null) {
-                logger.info("product with id " + productId + " not found");
-                throw new RuntimeException("Product not found");
-            }
-            cart.addProduct(product, quantity);
-            logger.info("product with id " + productId + " added to cart with id " + cartId);
-            return shoppingCartRepository.save(cart);
-        }
-        else {
+        if (!optionalCart.isPresent()) {
             logger.info("cart with id " + cartId + " not found");
             throw new RuntimeException("Cart not found");
         }
+
+        ShoppingCart cart = optionalCart.get();
+        Optional<ShoppingCartItem> existingItem = cart.getItems().stream()
+                .filter(item -> item.getProductId().equals(productId))
+                .findFirst();
+
+        if (existingItem.isPresent()) {
+            ShoppingCartItem item = existingItem.get();
+            item.setQuantity(item.getQuantity() + quantity);
+            logger.info("quantity of product with id " + productId + " increased in cart with id " + cartId);
+        } else {
+            cart.getItems().add(ShoppingCartItem.builder()
+                    .productId(productId)
+                    .quantity(quantity)
+                    .shoppingCart(cart)
+                    .build());
+            logger.info("product with id " + productId + " added to cart with id " + cartId);
+        }
+
+        return shoppingCartRepository.save(cart);
     }
 
     @Override
@@ -49,7 +59,7 @@ public class ShoppingCartService implements IShoppingCartService {
 
         if (optionalCart.isPresent()) {
             ShoppingCart cart = optionalCart.get();
-            cart.getItems().removeIf(item -> item.getProduct().getId().equals(productId));
+            cart.getItems().removeIf(item -> item.getProductId().equals(productId));
             logger.info("product with id " + productId + " removed from cart with id " + cartId);
             return shoppingCartRepository.save(cart);
         } else {
@@ -59,15 +69,28 @@ public class ShoppingCartService implements IShoppingCartService {
     }
 
     @Override
+    public ShoppingCart createShoppingCart() {
+        ShoppingCart cart = new ShoppingCart();
+        logger.info("new shoppingcart created");
+        return shoppingCartRepository.save(cart);
+    }
+
+    @Override
     public ShoppingCartDto getShoppingCart(Long cartId) {
         Optional<ShoppingCart> optionalCart = shoppingCartRepository.findById(cartId);
         if (optionalCart.isPresent()) {
             logger.info("cart with id " + cartId + " found");
-            ShoppingCartDto cart = new ShoppingCartDto(optionalCart.get());
-            return cart;
+            ShoppingCart cart = optionalCart.get();
+            cart.getItems().forEach(item -> {
+                Product product = productClient.getProductById(item.getProductId());
+                item.setProduct(product);
+            });
+            return new ShoppingCartDto(cart);
         } else {
             logger.info("cart with id " + cartId + " not found");
             throw new RuntimeException("Cart not found");
         }
     }
+
+
 }
