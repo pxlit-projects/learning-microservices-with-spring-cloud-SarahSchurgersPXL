@@ -1,0 +1,247 @@
+2024-12-05T09:36:55.922+0100 INFO               [main]                         be.pxl.services.LogbookServiceApplication - Starting LogbookServiceApplication using Java 21.0.5 with PID 37260 (C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\logbook-service\target\classes started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL)
+2024-12-05T09:36:55.930+0100 DEBUG              [main]                         be.pxl.services.LogbookServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T09:36:55.937+0100 INFO               [main]                         be.pxl.services.LogbookServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T09:37:36.866+0100 INFO               [main]                         be.pxl.services.LogbookServiceApplication - Starting LogbookServiceApplication using Java 21.0.5 with PID 17584 (C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\logbook-service\target\classes started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL)
+2024-12-05T09:37:36.867+0100 DEBUG              [main]                         be.pxl.services.LogbookServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T09:37:36.871+0100 INFO               [main]                         be.pxl.services.LogbookServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T09:37:42.663+0100 INFO               [main]                         be.pxl.services.LogbookServiceApplication - Started LogbookServiceApplication in 7.807 seconds (process running for 9.912)
+2024-12-05T09:37:48.449+0100 INFO               [main]                         be.pxl.services.ProductCatalogServiceApplication - Starting ProductCatalogServiceApplication using Java 21.0.5 with PID 26876 (C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\productcatalog-service\target\classes started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL)
+2024-12-05T09:37:48.450+0100 DEBUG              [main]                         be.pxl.services.ProductCatalogServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T09:37:48.450+0100 INFO               [main]                         be.pxl.services.ProductCatalogServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T09:37:53.048+0100 INFO               [main]                         be.pxl.services.ProductCatalogServiceApplication - Started ProductCatalogServiceApplication in 5.93 seconds (process running for 6.858)
+2024-12-05T09:37:59.797+0100 INFO               [main]                         be.pxl.services.ShoppingCartServiceApplication - Starting ShoppingCartServiceApplication using Java 21.0.5 with PID 28272 (C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\shoppingcart-service\target\classes started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL)
+2024-12-05T09:37:59.798+0100 DEBUG              [main]                         be.pxl.services.ShoppingCartServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T09:37:59.798+0100 INFO               [main]                         be.pxl.services.ShoppingCartServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T09:38:05.139+0100 INFO               [main]                         be.pxl.services.ShoppingCartServiceApplication - Started ShoppingCartServiceApplication in 6.459 seconds (process running for 8.345)
+2024-12-05T09:40:39.320+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.controller.ProductController - received request to add product
+2024-12-05T09:40:39.430+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ProductService - added product: Bamboe Tandenborstel with id: 2
+2024-12-05T09:40:39.455+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] be.pxl.services.QueueService  - Log received: Product added
+2024-12-05T09:40:39.609+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] be.pxl.services.service.LogbookService - Log added: 2
+2024-12-05T09:40:39.609+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] be.pxl.services.QueueService  - Log processed: Product added
+2024-12-05T09:46:25.371+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T09:46:25.371+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T09:48:28.651+0100 INFO               [main]                         be.pxl.services.ProductCatalogServiceApplication - Starting ProductCatalogServiceApplication using Java 21.0.5 with PID 28092 (C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\productcatalog-service\target\classes started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL)
+2024-12-05T09:48:28.652+0100 DEBUG              [main]                         be.pxl.services.ProductCatalogServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T09:48:28.652+0100 INFO               [main]                         be.pxl.services.ProductCatalogServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T09:48:35.255+0100 INFO               [main]                         be.pxl.services.ProductCatalogServiceApplication - Started ProductCatalogServiceApplication in 8.739 seconds (process running for 10.832)
+2024-12-05T09:49:52.863+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.controller.ProductController - received request to update product with id: 2
+2024-12-05T09:49:53.020+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ProductService - updated product: Bamboe Tandenborstel with id: 2
+2024-12-05T09:49:53.025+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] be.pxl.services.QueueService  - Log received: Product updated
+2024-12-05T09:49:53.078+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] be.pxl.services.service.LogbookService - Log added: 3
+2024-12-05T09:49:53.078+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] be.pxl.services.QueueService  - Log processed: Product updated
+2024-12-05T09:50:03.445+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T09:50:03.446+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T09:50:15.231+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.controller.ProductController - received request to get product with id: 2
+2024-12-05T09:50:15.273+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ProductService - retrieved product with id: 2
+2024-12-05T09:50:41.262+0100 INFO               [http-nio-8084-exec-1]         be.pxl.services.service.LogbookService - Getting all logs
+2024-12-05T09:50:41.356+0100 INFO               [http-nio-8084-exec-1]         be.pxl.services.controller.LogbookController - received requests to get all logs
+2024-12-05T09:52:50.761+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T09:52:50.761+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T09:52:50.831+0100 INFO               [http-nio-8085-exec-1]         be.pxl.services.services.ShoppingCartService - new shoppingcart created
+2024-12-05T09:52:50.884+0100 INFO               [http-nio-8085-exec-1]         be.pxl.services.controller.ShoppingCartController - received request to create a new cart
+2024-12-05T09:57:10.446+0100 INFO               [main]                         be.pxl.services.ShoppingCartServiceApplication - Starting ShoppingCartServiceApplication using Java 21.0.5 with PID 36280 (C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\shoppingcart-service\target\classes started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL)
+2024-12-05T09:57:10.446+0100 DEBUG              [main]                         be.pxl.services.ShoppingCartServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T09:57:10.446+0100 INFO               [main]                         be.pxl.services.ShoppingCartServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T09:57:13.799+0100 INFO               [main]                         be.pxl.services.ShoppingCartServiceApplication - Started ShoppingCartServiceApplication in 4.046 seconds (process running for 4.524)
+2024-12-05T09:57:32.298+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T09:57:32.298+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:01:41.666+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:01:41.666+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:02:34.986+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:02:34.986+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:03:07.470+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:03:07.470+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:04:23.509+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:04:23.509+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:04:23.514+0100 INFO               [http-nio-8085-exec-5]         be.pxl.services.services.ShoppingCartService - new shoppingcart created
+2024-12-05T10:04:23.602+0100 INFO               [http-nio-8085-exec-5]         be.pxl.services.controller.ShoppingCartController - received request to create a new cart
+2024-12-05T10:08:29.540+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:08:29.540+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:08:29.542+0100 INFO               [http-nio-8085-exec-9]         be.pxl.services.services.ShoppingCartService - new shoppingcart created
+2024-12-05T10:08:29.601+0100 INFO               [http-nio-8085-exec-9]         be.pxl.services.controller.ShoppingCartController - received request to create a new cart
+2024-12-05T10:10:34.285+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:10:34.285+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:10:34.310+0100 INFO               [http-nio-8085-exec-2]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:10:34.314+0100 INFO               [http-nio-8085-exec-2]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:12:23.136+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:12:23.136+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:12:23.170+0100 INFO               [http-nio-8085-exec-4]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:12:23.173+0100 INFO               [http-nio-8085-exec-4]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:12:43.154+0100 INFO               [http-nio-8085-exec-5]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:12:43.159+0100 INFO               [http-nio-8085-exec-5]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:12:44.282+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:12:44.282+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:12:44.288+0100 INFO               [http-nio-8085-exec-6]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:12:44.290+0100 INFO               [http-nio-8085-exec-6]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:13:18.396+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:13:18.396+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:13:18.401+0100 INFO               [http-nio-8085-exec-8]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:13:18.401+0100 INFO               [http-nio-8085-exec-8]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:13:23.744+0100 INFO               [http-nio-8085-exec-9]         be.pxl.services.services.ShoppingCartService - product with id 2 added to cart with id 6
+2024-12-05T10:13:23.789+0100 INFO               [http-nio-8085-exec-9]         be.pxl.services.controller.ShoppingCartController - received request to add product with id 2 to cart with id 6
+2024-12-05T10:16:49.732+0100 INFO               [main]                         be.pxl.services.ShoppingCartServiceApplication - Starting ShoppingCartServiceApplication using Java 21.0.5 with PID 16424 (C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\shoppingcart-service\target\classes started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL)
+2024-12-05T10:16:49.734+0100 DEBUG              [main]                         be.pxl.services.ShoppingCartServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T10:16:49.736+0100 INFO               [main]                         be.pxl.services.ShoppingCartServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T10:16:53.616+0100 INFO               [main]                         be.pxl.services.ShoppingCartServiceApplication - Started ShoppingCartServiceApplication in 4.952 seconds (process running for 5.954)
+2024-12-05T10:17:16.236+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:17:16.236+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:17:16.375+0100 INFO               [http-nio-8085-exec-1]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:17:16.434+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.controller.ProductController - received request to get product with id: 2
+2024-12-05T10:17:16.439+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ProductService - retrieved product with id: 2
+2024-12-05T10:17:16.448+0100 INFO               [http-nio-8085-exec-1]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:17:45.225+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:17:45.225+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:17:45.248+0100 INFO               [http-nio-8085-exec-3]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:17:45.255+0100 INFO               [http-nio-8082-exec-9]         be.pxl.services.controller.ProductController - received request to get product with id: 2
+2024-12-05T10:17:45.276+0100 INFO               [http-nio-8082-exec-9]         be.pxl.services.services.ProductService - retrieved product with id: 2
+2024-12-05T10:17:45.280+0100 INFO               [http-nio-8085-exec-3]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:18:06.756+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:18:06.756+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:18:06.761+0100 INFO               [http-nio-8085-exec-6]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:18:06.764+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.controller.ProductController - received request to get product with id: 2
+2024-12-05T10:18:06.767+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ProductService - retrieved product with id: 2
+2024-12-05T10:18:06.769+0100 INFO               [http-nio-8085-exec-6]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:19:36.118+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:19:36.118+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:19:36.131+0100 INFO               [http-nio-8085-exec-8]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:19:36.137+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.controller.ProductController - received request to get product with id: 2
+2024-12-05T10:19:36.142+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.services.ProductService - retrieved product with id: 2
+2024-12-05T10:19:36.144+0100 INFO               [http-nio-8085-exec-8]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:20:11.469+0100 INFO               [http-nio-8085-exec-7]         be.pxl.services.services.ShoppingCartService - product with id 1 added to cart with id 6
+2024-12-05T10:20:11.520+0100 INFO               [http-nio-8085-exec-7]         be.pxl.services.controller.ShoppingCartController - received request to add product with id 1 to cart with id 6
+2024-12-05T10:20:18.369+0100 INFO               [http-nio-8085-exec-5]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:20:18.376+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.controller.ProductController - received request to get product with id: 2
+2024-12-05T10:20:18.404+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ProductService - retrieved product with id: 2
+2024-12-05T10:20:18.411+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.controller.ProductController - received request to get product with id: 1
+2024-12-05T10:20:18.431+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ProductService - retrieved product with id: 1
+2024-12-05T10:20:18.435+0100 INFO               [http-nio-8085-exec-5]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:22:03.385+0100 INFO               [http-nio-8085-exec-10]        be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:22:03.392+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.controller.ProductController - received request to get product with id: 2
+2024-12-05T10:22:03.396+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.services.ProductService - retrieved product with id: 2
+2024-12-05T10:22:03.399+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.controller.ProductController - received request to get product with id: 1
+2024-12-05T10:22:03.402+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ProductService - retrieved product with id: 1
+2024-12-05T10:22:03.404+0100 INFO               [http-nio-8085-exec-10]        be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:22:58.609+0100 INFO               [http-nio-8085-exec-1]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:22:58.612+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.controller.ProductController - received request to get product with id: 2
+2024-12-05T10:22:58.616+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ProductService - retrieved product with id: 2
+2024-12-05T10:22:58.619+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.controller.ProductController - received request to get product with id: 1
+2024-12-05T10:22:58.622+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.services.ProductService - retrieved product with id: 1
+2024-12-05T10:22:58.623+0100 INFO               [http-nio-8085-exec-1]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:24:50.140+0100 INFO               [http-nio-8085-exec-3]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:24:50.144+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.controller.ProductController - received request to get product with id: 2
+2024-12-05T10:24:50.148+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.services.ProductService - retrieved product with id: 2
+2024-12-05T10:24:50.151+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.controller.ProductController - received request to get product with id: 1
+2024-12-05T10:24:50.154+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ProductService - retrieved product with id: 1
+2024-12-05T10:24:50.155+0100 INFO               [http-nio-8085-exec-3]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:26:38.837+0100 INFO               [http-nio-8085-exec-7]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:26:38.844+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.controller.ProductController - received request to get product with id: 2
+2024-12-05T10:26:38.871+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ProductService - retrieved product with id: 2
+2024-12-05T10:26:38.877+0100 INFO               [http-nio-8082-exec-9]         be.pxl.services.controller.ProductController - received request to get product with id: 1
+2024-12-05T10:26:38.904+0100 INFO               [http-nio-8082-exec-9]         be.pxl.services.services.ProductService - retrieved product with id: 1
+2024-12-05T10:26:38.914+0100 INFO               [http-nio-8085-exec-7]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:28:43.854+0100 INFO               [http-nio-8085-exec-9]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:28:43.857+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.controller.ProductController - received request to get product with id: 2
+2024-12-05T10:28:43.861+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ProductService - retrieved product with id: 2
+2024-12-05T10:28:43.864+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.controller.ProductController - received request to get product with id: 1
+2024-12-05T10:28:43.867+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ProductService - retrieved product with id: 1
+2024-12-05T10:28:43.868+0100 INFO               [http-nio-8085-exec-9]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:28:47.167+0100 INFO               [http-nio-8085-exec-10]        be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:28:47.171+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.controller.ProductController - received request to get product with id: 2
+2024-12-05T10:28:47.175+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.services.ProductService - retrieved product with id: 2
+2024-12-05T10:28:47.179+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.controller.ProductController - received request to get product with id: 1
+2024-12-05T10:28:47.183+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ProductService - retrieved product with id: 1
+2024-12-05T10:28:47.185+0100 INFO               [http-nio-8085-exec-10]        be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:28:49.940+0100 INFO               [http-nio-8085-exec-1]         be.pxl.services.services.ShoppingCartService - product with id 1 removed from cart with id 6
+2024-12-05T10:28:49.949+0100 INFO               [http-nio-8085-exec-1]         be.pxl.services.controller.ShoppingCartController - received request to remove product with id 1 from cart with id 6
+2024-12-05T10:31:47.886+0100 INFO               [main]                         be.pxl.services.ShoppingCartServiceApplication - Starting ShoppingCartServiceApplication using Java 21.0.5 with PID 27416 (C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\shoppingcart-service\target\classes started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL)
+2024-12-05T10:31:47.887+0100 DEBUG              [main]                         be.pxl.services.ShoppingCartServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T10:31:47.890+0100 INFO               [main]                         be.pxl.services.ShoppingCartServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T10:31:51.753+0100 INFO               [main]                         be.pxl.services.ShoppingCartServiceApplication - Started ShoppingCartServiceApplication in 5.17 seconds (process running for 6.389)
+2024-12-05T10:32:10.142+0100 INFO               [http-nio-8085-exec-2]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:32:10.204+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.controller.ProductController - received request to get product with id: 2
+2024-12-05T10:32:10.208+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ProductService - retrieved product with id: 2
+2024-12-05T10:32:10.216+0100 INFO               [http-nio-8085-exec-2]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:32:13.106+0100 INFO               [http-nio-8085-exec-6]         be.pxl.services.services.ShoppingCartService - product with id 2 removed from cart with id 6
+2024-12-05T10:32:13.130+0100 INFO               [http-nio-8085-exec-6]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:32:13.130+0100 INFO               [http-nio-8085-exec-6]         be.pxl.services.controller.ShoppingCartController - received request to remove product with id 2 from cart with id 6
+2024-12-05T10:32:16.041+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:32:16.041+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:32:16.047+0100 INFO               [http-nio-8085-exec-5]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:32:16.048+0100 INFO               [http-nio-8085-exec-5]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:32:20.056+0100 INFO               [http-nio-8085-exec-3]         be.pxl.services.services.ShoppingCartService - product with id 1 added to cart with id 6
+2024-12-05T10:32:20.083+0100 INFO               [http-nio-8085-exec-3]         be.pxl.services.controller.ShoppingCartController - received request to add product with id 1 to cart with id 6
+2024-12-05T10:32:21.788+0100 INFO               [http-nio-8085-exec-4]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T10:32:21.790+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.controller.ProductController - received request to get product with id: 1
+2024-12-05T10:32:21.795+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ProductService - retrieved product with id: 1
+2024-12-05T10:32:21.796+0100 INFO               [http-nio-8085-exec-4]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 6
+2024-12-05T10:33:09.817+0100 INFO               [http-nio-8082-exec-9]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:33:09.817+0100 INFO               [http-nio-8082-exec-9]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:33:09.820+0100 INFO               [http-nio-8085-exec-8]         be.pxl.services.services.ShoppingCartService - new shoppingcart created
+2024-12-05T10:33:09.827+0100 INFO               [http-nio-8085-exec-8]         be.pxl.services.controller.ShoppingCartController - received request to create a new cart
+2024-12-05T10:33:10.537+0100 INFO               [http-nio-8085-exec-9]         be.pxl.services.services.ShoppingCartService - cart with id 7 found
+2024-12-05T10:33:10.538+0100 INFO               [http-nio-8085-exec-9]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 7
+2024-12-05T10:33:16.529+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:33:16.530+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:33:16.557+0100 INFO               [http-nio-8085-exec-10]        be.pxl.services.services.ShoppingCartService - cart with id 7 found
+2024-12-05T10:33:16.562+0100 INFO               [http-nio-8085-exec-10]        be.pxl.services.controller.ShoppingCartController - received request to get cart with id 7
+2024-12-05T10:34:37.856+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:34:37.856+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:34:37.862+0100 INFO               [http-nio-8085-exec-6]         be.pxl.services.services.ShoppingCartService - cart with id 7 found
+2024-12-05T10:34:37.863+0100 INFO               [http-nio-8085-exec-6]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 7
+2024-12-05T10:38:49.685+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:38:49.685+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:40:35.852+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:40:35.852+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:44:39.234+0100 INFO               [http-nio-8082-exec-9]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:44:39.234+0100 INFO               [http-nio-8082-exec-9]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:45:15.061+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.controller.ProductController - received request to add product
+2024-12-05T10:45:15.118+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.services.ProductService - added product: wc papier with id: 3
+2024-12-05T10:45:15.134+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log received: Product added
+2024-12-05T10:45:15.230+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.service.LogbookService - Log added: 2
+2024-12-05T10:45:15.230+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log processed: Product added
+2024-12-05T10:45:34.646+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:45:34.647+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:45:47.991+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:45:47.991+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:45:48.021+0100 INFO               [http-nio-8085-exec-3]         be.pxl.services.services.ShoppingCartService - cart with id 7 found
+2024-12-05T10:45:48.025+0100 INFO               [http-nio-8085-exec-3]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 7
+2024-12-05T10:46:01.937+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:46:01.937+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:46:25.584+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.controller.ProductController - received request to update product with id: 1
+2024-12-05T10:48:59.480+0100 INFO               [main]                         be.pxl.services.ProductCatalogServiceApplication - Starting ProductCatalogServiceApplication using Java 21.0.5 with PID 1836 (C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\productcatalog-service\target\classes started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL)
+2024-12-05T10:48:59.481+0100 DEBUG              [main]                         be.pxl.services.ProductCatalogServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T10:48:59.481+0100 INFO               [main]                         be.pxl.services.ProductCatalogServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T10:49:05.290+0100 INFO               [main]                         be.pxl.services.ProductCatalogServiceApplication - Started ProductCatalogServiceApplication in 7.186 seconds (process running for 8.174)
+2024-12-05T10:50:53.641+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:50:53.642+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:50:55.684+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.controller.ProductController - received request to delete product with id: 1
+2024-12-05T10:50:55.729+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ProductService - deleted product with id: 1
+2024-12-05T10:50:55.733+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] be.pxl.services.QueueService  - Log received: Product deleted
+2024-12-05T10:50:55.764+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] be.pxl.services.service.LogbookService - Log added: 4
+2024-12-05T10:50:55.764+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] be.pxl.services.QueueService  - Log processed: Product deleted
+2024-12-05T10:51:57.115+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:51:57.115+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:51:57.120+0100 INFO               [http-nio-8085-exec-1]         be.pxl.services.services.ShoppingCartService - cart with id 7 found
+2024-12-05T10:51:57.122+0100 INFO               [http-nio-8085-exec-1]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 7
+2024-12-05T10:52:07.344+0100 INFO               [http-nio-8085-exec-7]         be.pxl.services.services.ShoppingCartService - cart with id 7 found
+2024-12-05T10:52:07.345+0100 INFO               [http-nio-8085-exec-7]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 7
+2024-12-05T10:52:08.646+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:52:08.646+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:52:08.651+0100 INFO               [http-nio-8085-exec-8]         be.pxl.services.services.ShoppingCartService - cart with id 7 found
+2024-12-05T10:52:08.652+0100 INFO               [http-nio-8085-exec-8]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 7
+2024-12-05T10:52:13.063+0100 INFO               [http-nio-8085-exec-9]         be.pxl.services.services.ShoppingCartService - product with id 2 added to cart with id 7
+2024-12-05T10:52:13.105+0100 INFO               [http-nio-8085-exec-9]         be.pxl.services.controller.ShoppingCartController - received request to add product with id 2 to cart with id 7
+2024-12-05T10:52:14.616+0100 INFO               [http-nio-8085-exec-10]        be.pxl.services.services.ShoppingCartService - cart with id 7 found
+2024-12-05T10:52:14.624+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.controller.ProductController - received request to get product with id: 2
+2024-12-05T10:52:14.628+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ProductService - retrieved product with id: 2
+2024-12-05T10:52:14.631+0100 INFO               [http-nio-8085-exec-10]        be.pxl.services.controller.ShoppingCartController - received request to get cart with id 7
+2024-12-05T10:52:18.699+0100 INFO               [http-nio-8085-exec-2]         be.pxl.services.services.ShoppingCartService - new shoppingcart created
+2024-12-05T10:52:18.719+0100 INFO               [http-nio-8085-exec-2]         be.pxl.services.controller.ShoppingCartController - received request to create a new cart
+2024-12-05T10:52:21.723+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:52:21.724+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:52:21.729+0100 INFO               [http-nio-8085-exec-6]         be.pxl.services.services.ShoppingCartService - cart with id 8 found
+2024-12-05T10:52:21.730+0100 INFO               [http-nio-8085-exec-6]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 8
+2024-12-05T10:53:33.167+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T10:53:33.167+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T10:53:33.173+0100 INFO               [http-nio-8085-exec-3]         be.pxl.services.services.ShoppingCartService - cart with id 8 found
+2024-12-05T10:53:33.174+0100 INFO               [http-nio-8085-exec-3]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 8

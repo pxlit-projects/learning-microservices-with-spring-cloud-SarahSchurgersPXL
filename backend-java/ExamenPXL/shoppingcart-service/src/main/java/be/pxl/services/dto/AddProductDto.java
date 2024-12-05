@@ -7,6 +7,4 @@ import java.io.Serializable;
 public class AddProductDto implements Serializable {
     private Long productId;
     private int quantity;
-
-
 }

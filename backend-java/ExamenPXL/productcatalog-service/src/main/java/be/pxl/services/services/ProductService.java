@@ -48,19 +48,19 @@ public class ProductService implements IProductService {
             Product product = optionalProduct.get();
             boolean isUpdated = false;
 
-            if (!product.getName().equals(productDto.getName())) {
+            if (!product.getName().equals(productDto.getName()) && productDto.getName() != null) {
                 product.setName(productDto.getName());
                 isUpdated = true;
             }
-            if (!product.getDescription().equals(productDto.getDescription())) {
+            if (!product.getDescription().equals(productDto.getDescription()) && productDto.getDescription() != null) {
                 product.setDescription(productDto.getDescription());
                 isUpdated = true;
             }
-            if (product.getPrice() != productDto.getPrice()) {
+            if (product.getPrice() != productDto.getPrice() && productDto.getPrice() != 0) {
                 product.setPrice(productDto.getPrice());
                 isUpdated = true;
             }
-            if (!product.getCategory().equals(productDto.getCategory())) {
+            if (!product.getCategory().equals(productDto.getCategory()) && productDto.getCategory() != null) {
                 product.setCategory(productDto.getCategory());
                 isUpdated = true;
             }
@@ -95,6 +95,20 @@ public class ProductService implements IProductService {
         if (optionalProduct.isPresent()) {
             logger.info("retrieved product with id: " + id);
             return ProductResponseDto.from(optionalProduct.get());
+        } else {
+            logger.info("product with id: " + id + " not found");
+            throw new RuntimeException("Product not found");
+        }
+    }
+
+    @Override
+    public void deleteProduct(Long id) {
+        Optional<Product> optionalProduct = productRepository.findById(id);
+        if (optionalProduct.isPresent()) {
+            productRepository.deleteById(id);
+            LogDto logDtp = new LogDto(id, "Product deleted", LocalDateTime.now(), "admin");
+            rabbitTemplate.convertAndSend("LogbookQueue", logDtp);
+            logger.info("deleted product with id: " + id);
         } else {
             logger.info("product with id: " + id + " not found");
             throw new RuntimeException("Product not found");

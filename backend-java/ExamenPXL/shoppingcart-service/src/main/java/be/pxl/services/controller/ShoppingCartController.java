@@ -21,17 +21,18 @@ public class ShoppingCartController {
     private static final Logger logger = LoggerFactory.getLogger(ShoppingCartController.class);
 
     @PostMapping("/{cartId}")
-    public ResponseEntity<ShoppingCart> addProductToCart(@PathVariable int cartId, @RequestBody AddProductDto addProductDto) {
-        ShoppingCart updatedCart = shoppingCartService.addProductToCart((long) cartId, addProductDto.getProductId(), addProductDto.getQuantity());
+    public ResponseEntity<Void> addProductToCart(@PathVariable int cartId, @RequestBody AddProductDto addProductDto) {
+        shoppingCartService.addProductToCart((long) cartId, addProductDto.getProductId(), addProductDto.getQuantity());
         logger.info("received request to add product with id " + addProductDto.getProductId() + " to cart with id " + cartId);
-        return new ResponseEntity<>(updatedCart, HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping("/{cartId}")
-    public ResponseEntity<ShoppingCart> removeProductFromCart(@PathVariable int cartId, @RequestBody DeleteProductDto productDto) {
-        ShoppingCart updatedCart = shoppingCartService.removeProductFromCart((long) cartId, productDto.getProductId());
+    public ResponseEntity<ShoppingCartDto> removeProductFromCart(@PathVariable int cartId, @RequestBody DeleteProductDto productDto) {
+        shoppingCartService.removeProductFromCart((long) cartId, productDto.getProductId());
+        ShoppingCartDto cart = shoppingCartService.getShoppingCart((long)cartId);
         logger.info("received request to remove product with id " + productDto.getProductId() + " from cart with id " + cartId);
-        return new ResponseEntity<>(updatedCart ,HttpStatus.OK);
+        return new ResponseEntity<>(cart,HttpStatus.OK);
     }
 
     @GetMapping("/{cartId}")
@@ -42,10 +43,11 @@ public class ShoppingCartController {
     }
 
     @PostMapping
-    public ResponseEntity<ShoppingCart> createNewCart() {
+    public ResponseEntity<ShoppingCartDto> createNewCart() {
         ShoppingCart newCart = shoppingCartService.createShoppingCart();
+        ShoppingCartDto cartDto = new ShoppingCartDto(newCart);
         logger.info("received request to create a new cart");
-        return new ResponseEntity<>(newCart, HttpStatus.CREATED);
+        return new ResponseEntity<>(cartDto, HttpStatus.CREATED);
     }
 
 }
