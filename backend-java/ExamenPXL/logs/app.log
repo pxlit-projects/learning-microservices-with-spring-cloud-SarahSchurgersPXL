@@ -378,3 +378,54 @@
 2024-12-05T12:42:18.574+0100 INFO               [http-nio-8084-exec-1]         be.pxl.services.controller.LogbookController - received requests to add log
 2024-12-05T12:42:25.393+0100 INFO               [http-nio-8084-exec-2]         be.pxl.services.service.LogbookService - Getting all logs
 2024-12-05T12:42:25.492+0100 INFO               [http-nio-8084-exec-2]         be.pxl.services.controller.LogbookController - received requests to get all logs
+2024-12-05T13:17:50.726+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log received: Product added
+2024-12-05T13:17:50.773+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.service.LogbookService - Log added: 103
+2024-12-05T13:17:50.773+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log processed: Product added
+2024-12-05T13:17:51.625+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log received: Product deleted
+2024-12-05T13:17:51.659+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.service.LogbookService - Log added: 104
+2024-12-05T13:17:51.659+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log processed: Product deleted
+2024-12-05T13:22:44.024+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log received: Product updated
+2024-12-05T13:22:44.031+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.service.LogbookService - Log added: 105
+2024-12-05T13:22:44.031+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log processed: Product updated
+2024-12-05T13:22:44.461+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log received: Product deleted
+2024-12-05T13:22:44.486+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.service.LogbookService - Log added: 106
+2024-12-05T13:22:44.487+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log processed: Product deleted
+2024-12-05T13:25:29.575+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log received: Product updated
+2024-12-05T13:25:29.626+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.service.LogbookService - Log added: 107
+2024-12-05T13:25:29.626+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log processed: Product updated
+2024-12-05T13:25:30.434+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log received: Product deleted
+2024-12-05T13:25:30.469+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.service.LogbookService - Log added: 108
+2024-12-05T13:25:30.470+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log processed: Product deleted
+2024-12-05T15:33:27.241+0100 INFO               [main]                         be.pxl.services.ProductCatalogServiceApplication - Starting ProductCatalogServiceApplication using Java 21.0.5 with PID 38360 (C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\productcatalog-service\target\classes started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL)
+2024-12-05T15:33:27.242+0100 DEBUG              [main]                         be.pxl.services.ProductCatalogServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T15:33:27.242+0100 INFO               [main]                         be.pxl.services.ProductCatalogServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T15:33:31.432+0100 INFO               [main]                         be.pxl.services.ProductCatalogServiceApplication - Started ProductCatalogServiceApplication in 5.421 seconds (process running for 6.168)
+2024-12-05T16:34:54.351+0100 INFO               [main]                         be.pxl.services.LogbookServiceApplication - Starting LogbookServiceApplication using Java 21.0.5 with PID 38764 (C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\logbook-service\target\classes started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL)
+2024-12-05T16:34:54.353+0100 DEBUG              [main]                         be.pxl.services.LogbookServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T16:34:54.356+0100 INFO               [main]                         be.pxl.services.LogbookServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T16:34:58.637+0100 INFO               [main]                         be.pxl.services.LogbookServiceApplication - Started LogbookServiceApplication in 5.726 seconds (process running for 7.198)
+2024-12-05T16:35:05.010+0100 INFO               [main]                         be.pxl.services.ProductCatalogServiceApplication - Starting ProductCatalogServiceApplication using Java 21.0.5 with PID 38204 (C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\productcatalog-service\target\classes started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL)
+2024-12-05T16:35:05.011+0100 DEBUG              [main]                         be.pxl.services.ProductCatalogServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T16:35:05.014+0100 INFO               [main]                         be.pxl.services.ProductCatalogServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T16:35:09.380+0100 INFO               [main]                         be.pxl.services.ProductCatalogServiceApplication - Started ProductCatalogServiceApplication in 6.052 seconds (process running for 7.416)
+2024-12-05T16:35:17.177+0100 INFO               [main]                         be.pxl.services.ShoppingCartServiceApplication - Starting ShoppingCartServiceApplication using Java 21.0.5 with PID 17372 (C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\shoppingcart-service\target\classes started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL)
+2024-12-05T16:35:17.179+0100 DEBUG              [main]                         be.pxl.services.ShoppingCartServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T16:35:17.180+0100 INFO               [main]                         be.pxl.services.ShoppingCartServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T16:35:21.179+0100 INFO               [main]                         be.pxl.services.ShoppingCartServiceApplication - Started ShoppingCartServiceApplication in 5.81 seconds (process running for 7.583)
+2024-12-05T16:36:50.113+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.controller.ProductController - received request to add product
+2024-12-05T16:36:50.237+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ProductService - added product: test with id: 34
+2024-12-05T16:36:50.268+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log received: Product added
+2024-12-05T16:36:50.398+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.service.LogbookService - Log added: 152
+2024-12-05T16:36:50.398+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log processed: Product added
+2024-12-05T16:37:42.013+0100 INFO               [http-nio-8085-exec-2]         be.pxl.services.services.ShoppingCartService - cart with id 2 found
+2024-12-05T16:37:42.072+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.controller.ProductController - received request to get product with id: 1
+2024-12-05T16:37:42.095+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ProductService - product with id: 1 not found
+2024-12-05T16:39:32.025+0100 INFO               [http-nio-8085-exec-3]         be.pxl.services.services.ShoppingCartService - cart with id 6 found
+2024-12-05T16:39:32.028+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.controller.ProductController - received request to get product with id: 1
+2024-12-05T16:39:32.032+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ProductService - product with id: 1 not found
+2024-12-05T16:39:52.809+0100 INFO               [http-nio-8085-exec-4]         be.pxl.services.services.ShoppingCartService - cart with id 8 found
+2024-12-05T16:39:52.811+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.controller.ProductController - received request to get product with id: 4
+2024-12-05T16:39:52.822+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ProductService - retrieved product with id: 4
+2024-12-05T16:39:52.838+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.controller.ProductController - received request to get product with id: 5
+2024-12-05T16:39:52.842+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.services.ProductService - retrieved product with id: 5
+2024-12-05T16:39:52.844+0100 INFO               [http-nio-8085-exec-4]         be.pxl.services.controller.ShoppingCartController - received request to get cart with id 8

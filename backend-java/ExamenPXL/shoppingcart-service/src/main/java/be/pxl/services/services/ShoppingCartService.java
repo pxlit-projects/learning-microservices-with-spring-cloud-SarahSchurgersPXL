@@ -22,7 +22,7 @@ public class ShoppingCartService implements IShoppingCartService {
     private static final Logger logger = LoggerFactory.getLogger(ShoppingCartService.class);
 
     @Autowired
-    private ProductClient productClient;
+    private final ProductClient productClient;
 
     @Override
     public ShoppingCart addProductToCart(Long cartId, Long productId, int quantity) {

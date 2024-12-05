@@ -24,7 +24,7 @@ public class ProductService implements IProductService {
     private static final Logger logger = LoggerFactory.getLogger(ProductService.class);
 
     @Autowired
-    private RabbitTemplate rabbitTemplate;
+    private final RabbitTemplate rabbitTemplate;
 
     @Override
     public void addProduct(ProductDto productDto) {

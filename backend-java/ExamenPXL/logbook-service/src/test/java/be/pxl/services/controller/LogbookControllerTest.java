@@ -1,5 +1,6 @@
 package be.pxl.services.controller;
 
+import be.pxl.services.LogbookServiceApplication;
 import be.pxl.services.domain.Log;
 import be.pxl.services.dto.LogDto;
 import be.pxl.services.repository.LogRepository;
@@ -30,7 +31,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest
+@SpringBootTest(classes = LogbookServiceApplication.class)
 @Testcontainers
 @AutoConfigureMockMvc
 public class LogbookControllerTest {

@@ -43,8 +43,4 @@ public class LogbookController {
         logger.info("received requests to get all logs");
         return new ResponseEntity<>(logDtos, HttpStatus.OK);
     }
-
-
-
-
 }
