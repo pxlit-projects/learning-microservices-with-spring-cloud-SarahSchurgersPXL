@@ -3,6 +3,7 @@ import LoginView from '@/components/LoginView.vue';
 import ShoppingPage from '@/components/ShoppingPage.vue';
 import ShoppingCart from '@/components/ShoppingCart.vue';
 import AdminDashboard from '@/components/AdminDashboard.vue';
+import LogbookPage from '@/components/LogbookPage.vue';
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/admin',
     name: 'AdminDashboard',
     component: AdminDashboard
+  },
+  {
+    path: '/logbook',
+    name: 'LogbookPage',
+    component: LogbookPage
   }
 ];
 

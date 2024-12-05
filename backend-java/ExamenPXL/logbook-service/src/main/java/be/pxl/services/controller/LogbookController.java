@@ -29,10 +29,19 @@ public class LogbookController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Log>> getAllLogs() {
+    public ResponseEntity<List<LogDto>> getAllLogs() {
         List<Log> logs = logbookService.getAllLogs();
+        List<LogDto> logDtos = logs.stream()
+                .map(log -> LogDto.builder()
+                        .productId(log.getProductId())
+                        .message(log.getMessage())
+                        .timestamp(log.getTimestamp())
+                        .user(log.getUser())
+                        .build())
+                .toList();
+
         logger.info("received requests to get all logs");
-        return new ResponseEntity<>(logs, HttpStatus.OK);
+        return new ResponseEntity<>(logDtos, HttpStatus.OK);
     }
 
 
