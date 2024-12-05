@@ -370,3 +370,11 @@
 2024-12-05T11:27:01.054+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ProductService - retrieved all products
 2024-12-05T11:27:04.698+0100 INFO               [http-nio-8084-exec-7]         be.pxl.services.service.LogbookService - Getting all logs
 2024-12-05T11:27:04.705+0100 INFO               [http-nio-8084-exec-7]         be.pxl.services.controller.LogbookController - received requests to get all logs
+2024-12-05T12:39:48.918+0100 INFO               [main]                         be.pxl.services.LogbookServiceApplication - Starting LogbookServiceApplication using Java 21.0.5 with PID 28828 (C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\logbook-service\target\classes started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL)
+2024-12-05T12:39:48.918+0100 DEBUG              [main]                         be.pxl.services.LogbookServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T12:39:48.918+0100 INFO               [main]                         be.pxl.services.LogbookServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T12:39:52.796+0100 INFO               [main]                         be.pxl.services.LogbookServiceApplication - Started LogbookServiceApplication in 5.408 seconds (process running for 6.396)
+2024-12-05T12:42:18.574+0100 INFO               [http-nio-8084-exec-1]         be.pxl.services.service.LogbookService - Log added: 102
+2024-12-05T12:42:18.574+0100 INFO               [http-nio-8084-exec-1]         be.pxl.services.controller.LogbookController - received requests to add log
+2024-12-05T12:42:25.393+0100 INFO               [http-nio-8084-exec-2]         be.pxl.services.service.LogbookService - Getting all logs
+2024-12-05T12:42:25.492+0100 INFO               [http-nio-8084-exec-2]         be.pxl.services.controller.LogbookController - received requests to get all logs
