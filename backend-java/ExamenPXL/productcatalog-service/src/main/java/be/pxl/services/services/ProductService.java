@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -26,6 +27,7 @@ public class ProductService implements IProductService {
     @Autowired
     private final RabbitTemplate rabbitTemplate;
 
+    @Transactional
     @Override
     public void addProduct(ProductDto productDto) {
         Product product = Product.builder()
@@ -40,7 +42,7 @@ public class ProductService implements IProductService {
         rabbitTemplate.convertAndSend("LogbookQueue", logDtp);
         logger.info("added product: " + product.getName() + " with id: " + product.getId());
     }
-
+    @Transactional
     @Override
     public void updateProduct(Long id, ProductDto productDto) {
         Optional<Product> optionalProduct = productRepository.findById(id);
@@ -100,7 +102,7 @@ public class ProductService implements IProductService {
             throw new RuntimeException("Product not found");
         }
     }
-
+    @Transactional
     @Override
     public void deleteProduct(Long id) {
         Optional<Product> optionalProduct = productRepository.findById(id);

@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -18,6 +19,7 @@ public class LogbookService implements ILogbookService {
     private final LogRepository logRepository;
     private static final Logger logger = LoggerFactory.getLogger(LogbookService.class);
 
+    @Transactional
     @Override
     public void addLog(LogDto logDto) {
         Log log = Log.builder()

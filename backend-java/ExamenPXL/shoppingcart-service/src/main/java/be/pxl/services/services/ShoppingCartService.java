@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -23,7 +24,7 @@ public class ShoppingCartService implements IShoppingCartService {
 
     @Autowired
     private final ProductClient productClient;
-
+    @Transactional
     @Override
     public ShoppingCart addProductToCart(Long cartId, Long productId, int quantity) {
         Optional<ShoppingCart> optionalCart = shoppingCartRepository.findById(cartId);
@@ -52,7 +53,7 @@ public class ShoppingCartService implements IShoppingCartService {
 
         return shoppingCartRepository.save(cart);
     }
-
+    @Transactional
     @Override
     public ShoppingCart removeProductFromCart(Long cartId, Long productId) {
         Optional<ShoppingCart> optionalCart = shoppingCartRepository.findById(cartId);
@@ -67,7 +68,7 @@ public class ShoppingCartService implements IShoppingCartService {
             throw new RuntimeException("Cart not found");
         }
     }
-
+    @Transactional
     @Override
     public ShoppingCart createShoppingCart() {
         ShoppingCart cart = new ShoppingCart();

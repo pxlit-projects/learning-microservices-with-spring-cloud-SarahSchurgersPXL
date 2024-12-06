@@ -31,9 +31,6 @@ public class ProductServiceTests {
     @InjectMocks
     private ProductService productService;
 
-    @Captor
-    private ArgumentCaptor<LogDto> logDtoArgumentCaptor;
-
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
