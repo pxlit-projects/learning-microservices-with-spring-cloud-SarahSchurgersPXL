@@ -1,0 +1,150 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > LogbookController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">be.pxl.services.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: LogbookController (be.pxl.services.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LogbookController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (15/15)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package be.pxl.services.controller;
+&nbsp;
+&nbsp;import be.pxl.services.domain.Log;
+&nbsp;import be.pxl.services.dto.LogDto;
+&nbsp;import be.pxl.services.service.ILogbookService;
+&nbsp;import jakarta.validation.Valid;
+&nbsp;import lombok.RequiredArgsConstructor;
+&nbsp;import org.slf4j.Logger;
+&nbsp;import org.slf4j.LoggerFactory;
+&nbsp;import org.springframework.http.HttpStatus;
+&nbsp;import org.springframework.http.ResponseEntity;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@RestController
+&nbsp;@RequestMapping(&quot;/logbook&quot;)
+&nbsp;@RequiredArgsConstructor
+&nbsp;public class LogbookController {
+&nbsp;
+&nbsp;    private final ILogbookService logbookService;
+<b class="fc">&nbsp;    private static final Logger logger = LoggerFactory.getLogger(LogbookController.class);</b>
+&nbsp;
+&nbsp;    @PostMapping
+&nbsp;    public ResponseEntity&lt;Void&gt; addLog(@RequestBody @Valid LogDto logDto) {
+<b class="fc">&nbsp;        logbookService.addLog(logDto);</b>
+<b class="fc">&nbsp;        logger.info(&quot;received requests to add log&quot;);</b>
+<b class="fc">&nbsp;        return new ResponseEntity&lt;&gt;(HttpStatus.CREATED);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping
+&nbsp;    public ResponseEntity&lt;List&lt;LogDto&gt;&gt; getAllLogs() {
+<b class="fc">&nbsp;        List&lt;Log&gt; logs = logbookService.getAllLogs();</b>
+<b class="fc">&nbsp;        List&lt;LogDto&gt; logDtos = logs.stream()</b>
+<b class="fc">&nbsp;                .map(log -&gt; LogDto.builder()</b>
+<b class="fc">&nbsp;                        .productId(log.getProductId())</b>
+<b class="fc">&nbsp;                        .message(log.getMessage())</b>
+<b class="fc">&nbsp;                        .timestamp(log.getTimestamp())</b>
+<b class="fc">&nbsp;                        .user(log.getUser())</b>
+<b class="fc">&nbsp;                        .build())</b>
+<b class="fc">&nbsp;                .toList();</b>
+&nbsp;
+<b class="fc">&nbsp;        logger.info(&quot;received requests to get all logs&quot;);</b>
+<b class="fc">&nbsp;        return new ResponseEntity&lt;&gt;(logDtos, HttpStatus.OK);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-06 12:48</div>
+</div>
+</body>
+</html>

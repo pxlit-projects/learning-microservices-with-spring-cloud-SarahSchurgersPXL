@@ -26,11 +26,14 @@ spring:
           uri: lb://productcatalog-service
           predicates:
             - Path=/product/**
+          filters:
+            - RewritePath=/product/(?<path>.*), /api/product/$\{path}
         - id: shoppingcart-service
           uri: lb://shoppingcart-service
           predicates:
             - Path=/shoppingcart/**
-
+          filters:
+            - RewritePath=/shoppingcart/(?<path>.*), /api/shoppingcart/$\{path}
 
 eureka:
   client:

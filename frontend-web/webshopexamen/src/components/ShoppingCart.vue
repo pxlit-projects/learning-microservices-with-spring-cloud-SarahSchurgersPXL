@@ -41,7 +41,7 @@ export default {
     async fetchCart() {
       try {
         const cartId = localStorage.getItem('cartId'); // Ophalen van de winkelwagen-ID uit localStorage
-        const response = await axios.get(`${process.env.VUE_APP_BACKEND_URL}/shoppingcart/${cartId}`);
+        const response = await axios.get(`${process.env.VUE_APP_BACKEND_URL}/shoppingcart/api/shoppingcart/${cartId}`);
         this.cart = response.data;
       } catch (error) {
         console.error('Error fetching cart:', error);
@@ -49,7 +49,7 @@ export default {
     },
     async removeFromCart(productId) {
       try {
-        const response = await axios.delete(`${process.env.VUE_APP_BACKEND_URL}/shoppingcart/${this.cart.id}`, {
+        const response = await axios.delete(`${process.env.VUE_APP_BACKEND_URL}/shoppingcart/api/shoppingcart/${this.cart.id}`, {
           data: { productId: productId }
         });
         this.cart = response.data;
@@ -66,7 +66,7 @@ export default {
     },
     async initializeCart() {
       try {
-        const response = await axios.post(`${process.env.VUE_APP_BACKEND_URL}/shoppingcart`);
+        const response = await axios.post(`${process.env.VUE_APP_BACKEND_URL}/shoppingcart/api/shoppingcart`);
         this.cart = response.data;
         localStorage.setItem('cartId', this.cart.id); // Opslaan van de nieuwe winkelwagen-ID in localStorage
       } catch (error) {

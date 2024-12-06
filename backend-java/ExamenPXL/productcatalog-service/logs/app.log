@@ -1,0 +1,48 @@
+2024-12-05T13:17:38.166+0100 INFO               [main]                         be.pxl.services.controller.ProductControllerTest - Starting ProductControllerTest using Java 21.0.5 with PID 36448 (started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\productcatalog-service)
+2024-12-05T13:17:38.166+0100 DEBUG              [main]                         be.pxl.services.controller.ProductControllerTest - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T13:17:38.166+0100 INFO               [main]                         be.pxl.services.controller.ProductControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T13:17:49.660+0100 INFO               [main]                         be.pxl.services.controller.ProductControllerTest - Started ProductControllerTest in 12.687 seconds (process running for 26.842)
+2024-12-05T13:17:50.593+0100 INFO               [main]                         be.pxl.services.controller.ProductController - received request to update product with id: 1
+2024-12-05T13:17:50.624+0100 INFO               [main]                         be.pxl.services.controller.ProductController - received request to add product
+2024-12-05T13:17:50.712+0100 INFO               [main]                         be.pxl.services.services.ProductService - added product: Test Product with id: 2
+2024-12-05T13:17:51.020+0100 INFO               [main]                         be.pxl.services.controller.ProductController - received request to get product with id: 1
+2024-12-05T13:17:51.041+0100 INFO               [main]                         be.pxl.services.services.ProductService - retrieved product with id: 1
+2024-12-05T13:17:51.147+0100 INFO               [main]                         be.pxl.services.controller.ProductController - received request to delete product with id: 1
+2024-12-05T13:17:51.209+0100 INFO               [main]                         be.pxl.services.services.ProductService - deleted product with id: 1
+2024-12-05T13:17:51.310+0100 INFO               [main]                         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T13:17:51.310+0100 INFO               [main]                         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T13:17:51.409+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log received: Product deleted
+2024-12-05T13:22:34.097+0100 INFO               [main]                         be.pxl.services.controller.ProductControllerTest - Starting ProductControllerTest using Java 21.0.5 with PID 27980 (started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\productcatalog-service)
+2024-12-05T13:22:34.097+0100 DEBUG              [main]                         be.pxl.services.controller.ProductControllerTest - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T13:22:34.097+0100 INFO               [main]                         be.pxl.services.controller.ProductControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T13:22:43.237+0100 INFO               [main]                         be.pxl.services.controller.ProductControllerTest - Started ProductControllerTest in 10.963 seconds (process running for 25.577)
+2024-12-05T13:22:43.982+0100 INFO               [main]                         be.pxl.services.controller.ProductController - received request to update product with id: 1
+2024-12-05T13:22:44.023+0100 INFO               [main]                         be.pxl.services.services.ProductService - updated product: Updated Product with id: 1
+2024-12-05T13:22:44.046+0100 INFO               [main]                         be.pxl.services.controller.ProductController - received request to add product
+2024-12-05T13:22:44.071+0100 INFO               [main]                         be.pxl.services.services.ProductService - added product: Test with id: 2
+2024-12-05T13:22:44.151+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log received: Product added
+2024-12-05T13:22:44.184+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.service.LogbookService - Log added: 1
+2024-12-05T13:22:44.184+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log processed: Product added
+2024-12-05T13:22:44.274+0100 INFO               [main]                         be.pxl.services.controller.ProductController - received request to get product with id: 1
+2024-12-05T13:22:44.292+0100 INFO               [main]                         be.pxl.services.services.ProductService - retrieved product with id: 1
+2024-12-05T13:22:44.422+0100 INFO               [main]                         be.pxl.services.controller.ProductController - received request to delete product with id: 2
+2024-12-05T13:22:44.459+0100 INFO               [main]                         be.pxl.services.services.ProductService - deleted product with id: 2
+2024-12-05T13:22:44.570+0100 INFO               [main]                         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T13:22:44.570+0100 INFO               [main]                         be.pxl.services.services.ProductService - retrieved all products
+2024-12-05T13:25:18.676+0100 INFO               [main]                         be.pxl.services.controller.ProductControllerTest - Starting ProductControllerTest using Java 21.0.5 with PID 10048 (started by sarah in C:\Users\sarah\Desktop\Java Examen\learning-microservices-with-spring-cloud-SarahSchurgersPXL\backend-java\ExamenPXL\productcatalog-service)
+2024-12-05T13:25:18.676+0100 DEBUG              [main]                         be.pxl.services.controller.ProductControllerTest - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-05T13:25:18.676+0100 INFO               [main]                         be.pxl.services.controller.ProductControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T13:25:28.650+0100 INFO               [main]                         be.pxl.services.controller.ProductControllerTest - Started ProductControllerTest in 10.982 seconds (process running for 25.229)
+2024-12-05T13:25:29.535+0100 INFO               [main]                         be.pxl.services.controller.ProductController - received request to update product with id: 1
+2024-12-05T13:25:29.573+0100 INFO               [main]                         be.pxl.services.services.ProductService - updated product: Updated Product with id: 1
+2024-12-05T13:25:29.627+0100 INFO               [main]                         be.pxl.services.controller.ProductController - received request to add product
+2024-12-05T13:25:29.661+0100 INFO               [main]                         be.pxl.services.services.ProductService - added product: Test with id: 2
+2024-12-05T13:25:29.785+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log received: Product added
+2024-12-05T13:25:29.843+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.service.LogbookService - Log added: 1
+2024-12-05T13:25:29.844+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.QueueService  - Log processed: Product added
+2024-12-05T13:25:30.026+0100 INFO               [main]                         be.pxl.services.controller.ProductController - received request to get product with id: 1
+2024-12-05T13:25:30.046+0100 INFO               [main]                         be.pxl.services.services.ProductService - retrieved product with id: 1
+2024-12-05T13:25:30.386+0100 INFO               [main]                         be.pxl.services.controller.ProductController - received request to delete product with id: 2
+2024-12-05T13:25:30.424+0100 INFO               [main]                         be.pxl.services.services.ProductService - deleted product with id: 2
+2024-12-05T13:25:30.485+0100 INFO               [main]                         be.pxl.services.controller.ProductController - received request to get all products
+2024-12-05T13:25:30.485+0100 INFO               [main]                         be.pxl.services.services.ProductService - retrieved all products

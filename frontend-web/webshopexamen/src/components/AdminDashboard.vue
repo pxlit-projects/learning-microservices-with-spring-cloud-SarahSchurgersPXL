@@ -115,7 +115,7 @@ export default {
   methods: {
     async fetchProducts() {
       try {
-        const response = await axios.get(`${process.env.VUE_APP_BACKEND_URL}/product`);
+        const response = await axios.get(`${process.env.VUE_APP_BACKEND_URL}/product/api/product`);
         this.products = response.data;
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -123,7 +123,7 @@ export default {
     },
     async addProduct() {
       try {
-        const response = await axios.post(`${process.env.VUE_APP_BACKEND_URL}/product`, {
+        const response = await axios.post(`${process.env.VUE_APP_BACKEND_URL}/product/api/product`, {
           ...this.newProduct,
           labels: this.newProduct.labels.split(',').map(label => label.trim())
         });
@@ -140,7 +140,7 @@ export default {
     },
     async updateProduct() {
       try {
-        await axios.put(`${process.env.VUE_APP_BACKEND_URL}/product/${this.editProductData.id}`, {
+        await axios.put(`${process.env.VUE_APP_BACKEND_URL}/product/api/product/${this.editProductData.id}`, {
           ...this.editProductData,
           labels: this.editProductData.labels.split(',').map(label => label.trim())
         });
@@ -152,7 +152,7 @@ export default {
     },
     async deleteProduct(productId) {
       try {
-        await axios.delete(`${process.env.VUE_APP_BACKEND_URL}/product/${productId}`);
+        await axios.delete(`${process.env.VUE_APP_BACKEND_URL}/product/api/product/${productId}`);
         this.products = this.products.filter(p => p.id !== productId);
       } catch (error) {
         console.error('Error deleting product:', error);

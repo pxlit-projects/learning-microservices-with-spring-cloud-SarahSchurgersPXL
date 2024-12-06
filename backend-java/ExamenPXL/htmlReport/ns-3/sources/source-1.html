@@ -1,0 +1,233 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ProductService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">be.pxl.services.services</a>
+</div>
+
+<h1>Coverage Summary for Class: ProductService (be.pxl.services.services)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ProductService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    82,1%
+  </span>
+  <span class="absValue">
+    (23/28)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (55/55)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package be.pxl.services.services;
+&nbsp;
+&nbsp;import be.pxl.services.domain.Product;
+&nbsp;import be.pxl.services.dto.ProductDto;
+&nbsp;import be.pxl.services.dto.LogDto;
+&nbsp;import be.pxl.services.dto.ProductResponseDto;
+&nbsp;import be.pxl.services.repository.ProductRepository;
+&nbsp;import lombok.RequiredArgsConstructor;
+&nbsp;import org.slf4j.Logger;
+&nbsp;import org.slf4j.LoggerFactory;
+&nbsp;import org.springframework.amqp.rabbit.core.RabbitTemplate;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;import java.time.LocalDateTime;
+&nbsp;import java.util.List;
+&nbsp;import java.util.Optional;
+&nbsp;
+&nbsp;@Service
+&nbsp;@RequiredArgsConstructor
+&nbsp;public class ProductService implements IProductService {
+&nbsp;
+&nbsp;    private final ProductRepository productRepository;
+<b class="fc">&nbsp;    private static final Logger logger = LoggerFactory.getLogger(ProductService.class);</b>
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    private final RabbitTemplate rabbitTemplate;
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void addProduct(ProductDto productDto) {
+<b class="fc">&nbsp;        Product product = Product.builder()</b>
+<b class="fc">&nbsp;                .name(productDto.getName())</b>
+<b class="fc">&nbsp;                .description(productDto.getDescription())</b>
+<b class="fc">&nbsp;                .price(productDto.getPrice())</b>
+<b class="fc">&nbsp;                .category(productDto.getCategory())</b>
+<b class="fc">&nbsp;                .labels(productDto.getLabels())</b>
+<b class="fc">&nbsp;                .build();</b>
+<b class="fc">&nbsp;        productRepository.save(product);</b>
+<b class="fc">&nbsp;        LogDto logDtp = new LogDto(product.getId(), &quot;Product added&quot;, LocalDateTime.now(), &quot;admin&quot;);</b>
+<b class="fc">&nbsp;        rabbitTemplate.convertAndSend(&quot;LogbookQueue&quot;, logDtp);</b>
+<b class="fc">&nbsp;        logger.info(&quot;added product: &quot; + product.getName() + &quot; with id: &quot; + product.getId());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void updateProduct(Long id, ProductDto productDto) {
+<b class="fc">&nbsp;        Optional&lt;Product&gt; optionalProduct = productRepository.findById(id);</b>
+<b class="fc">&nbsp;        if (optionalProduct.isPresent()) {</b>
+<b class="fc">&nbsp;            Product product = optionalProduct.get();</b>
+<b class="fc">&nbsp;            boolean isUpdated = false;</b>
+&nbsp;
+<b class="pc">&nbsp;            if (!product.getName().equals(productDto.getName()) &amp;&amp; productDto.getName() != null) {</b>
+<b class="fc">&nbsp;                product.setName(productDto.getName());</b>
+<b class="fc">&nbsp;                isUpdated = true;</b>
+&nbsp;            }
+<b class="pc">&nbsp;            if (!product.getDescription().equals(productDto.getDescription()) &amp;&amp; productDto.getDescription() != null) {</b>
+<b class="fc">&nbsp;                product.setDescription(productDto.getDescription());</b>
+<b class="fc">&nbsp;                isUpdated = true;</b>
+&nbsp;            }
+<b class="pc">&nbsp;            if (product.getPrice() != productDto.getPrice() &amp;&amp; productDto.getPrice() != 0) {</b>
+<b class="fc">&nbsp;                product.setPrice(productDto.getPrice());</b>
+<b class="fc">&nbsp;                isUpdated = true;</b>
+&nbsp;            }
+<b class="pc">&nbsp;            if (!product.getCategory().equals(productDto.getCategory()) &amp;&amp; productDto.getCategory() != null) {</b>
+<b class="fc">&nbsp;                product.setCategory(productDto.getCategory());</b>
+<b class="fc">&nbsp;                isUpdated = true;</b>
+&nbsp;            }
+<b class="pc">&nbsp;            if (productDto.getLabels() != null &amp;&amp; !product.getLabels().equals(productDto.getLabels())) {</b>
+<b class="fc">&nbsp;                product.setLabels(productDto.getLabels());</b>
+<b class="fc">&nbsp;                isUpdated = true;</b>
+&nbsp;            }
+&nbsp;
+<b class="fc">&nbsp;            if (isUpdated) {</b>
+<b class="fc">&nbsp;                productRepository.save(product);</b>
+<b class="fc">&nbsp;                LogDto logDtp = new LogDto(product.getId(), &quot;Product updated&quot;, LocalDateTime.now(), &quot;admin&quot;);</b>
+<b class="fc">&nbsp;                rabbitTemplate.convertAndSend(&quot;LogbookQueue&quot;, logDtp);</b>
+<b class="fc">&nbsp;                logger.info(&quot;updated product: &quot; + product.getName() + &quot; with id: &quot; + product.getId());</b>
+&nbsp;            } else {
+<b class="fc">&nbsp;                logger.info(&quot;no changes detected for product with id: &quot; + product.getId());</b>
+&nbsp;            }
+&nbsp;        } else {
+<b class="fc">&nbsp;            throw new RuntimeException(&quot;Product not found&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public List&lt;ProductResponseDto&gt; getAllProducts() {
+<b class="fc">&nbsp;        logger.info(&quot;retrieved all products&quot;);</b>
+<b class="fc">&nbsp;        List&lt;Product&gt; products = productRepository.findAll();</b>
+<b class="fc">&nbsp;        return ProductResponseDto.from(products);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public ProductResponseDto getProductById(Long id) {
+<b class="fc">&nbsp;        Optional&lt;Product&gt; optionalProduct = productRepository.findById(id);</b>
+<b class="fc">&nbsp;        if (optionalProduct.isPresent()) {</b>
+<b class="fc">&nbsp;            logger.info(&quot;retrieved product with id: &quot; + id);</b>
+<b class="fc">&nbsp;            return ProductResponseDto.from(optionalProduct.get());</b>
+&nbsp;        } else {
+<b class="fc">&nbsp;            logger.info(&quot;product with id: &quot; + id + &quot; not found&quot;);</b>
+<b class="fc">&nbsp;            throw new RuntimeException(&quot;Product not found&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void deleteProduct(Long id) {
+<b class="fc">&nbsp;        Optional&lt;Product&gt; optionalProduct = productRepository.findById(id);</b>
+<b class="fc">&nbsp;        if (optionalProduct.isPresent()) {</b>
+<b class="fc">&nbsp;            productRepository.deleteById(id);</b>
+<b class="fc">&nbsp;            LogDto logDtp = new LogDto(id, &quot;Product deleted&quot;, LocalDateTime.now(), &quot;admin&quot;);</b>
+<b class="fc">&nbsp;            rabbitTemplate.convertAndSend(&quot;LogbookQueue&quot;, logDtp);</b>
+<b class="fc">&nbsp;            logger.info(&quot;deleted product with id: &quot; + id);</b>
+&nbsp;        } else {
+<b class="fc">&nbsp;            logger.info(&quot;product with id: &quot; + id + &quot; not found&quot;);</b>
+<b class="fc">&nbsp;            throw new RuntimeException(&quot;Product not found&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-06 12:48</div>
+</div>
+</body>
+</html>
