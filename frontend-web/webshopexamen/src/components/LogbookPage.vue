@@ -35,7 +35,7 @@ export default {
   methods: {
     async fetchLogs() {
       try {
-        const response = await axios.get(`${process.env.VUE_APP_BACKEND_URL}/logbook`);
+        const response = await axios.get(`${process.env.VUE_APP_BACKEND_URL}/logbook/logs`);
         this.logs = response.data;
       } catch (error) {
         console.error('Error fetching logs:', error);

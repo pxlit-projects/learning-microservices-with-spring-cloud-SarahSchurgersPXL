@@ -42,7 +42,7 @@ public class ShoppingCartController {
         return new ResponseEntity<>(cart, HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping("/new")
     public ResponseEntity<ShoppingCartDto> createNewCart() {
         ShoppingCart newCart = shoppingCartService.createShoppingCart();
         ShoppingCartDto cartDto = new ShoppingCartDto(newCart);

@@ -28,7 +28,7 @@ public class LogbookController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @GetMapping
+    @GetMapping("/logs")
     public ResponseEntity<List<LogDto>> getAllLogs() {
         List<Log> logs = logbookService.getAllLogs();
         List<LogDto> logDtos = logs.stream()

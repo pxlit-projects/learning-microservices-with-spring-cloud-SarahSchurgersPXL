@@ -22,7 +22,7 @@ public class ProductController {
     private final IProductService productService;
     private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
-    @PostMapping
+    @PostMapping("/new")
     public ResponseEntity<Product> addProduct(@RequestBody @Valid ProductDto productdto) {
         logger.info("received request to add product");
         productService.addProduct(productdto);
@@ -36,7 +36,7 @@ public class ProductController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping
+    @GetMapping("/products")
     public ResponseEntity<List<ProductResponseDto>> getAllProducts() {
         logger.info("received request to get all products");
         List<ProductResponseDto> products = productService.getAllProducts();

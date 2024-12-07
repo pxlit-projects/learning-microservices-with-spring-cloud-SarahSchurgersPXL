@@ -69,7 +69,7 @@ export default {
   methods: {
     async fetchProducts() {
       try {
-        const response = await axios.get(`${process.env.VUE_APP_BACKEND_URL}/product/api/product`);
+        const response = await axios.get(`${process.env.VUE_APP_BACKEND_URL}/product/products`);
         this.products = response.data;
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -81,7 +81,7 @@ export default {
         this.fetchCart(cartId);
       } else {
         try {
-          const response = await axios.post(`${process.env.VUE_APP_BACKEND_URL}/shoppingcart/api/shoppingcart`);
+          const response = await axios.post(`${process.env.VUE_APP_BACKEND_URL}/shoppingcart/new`);
           this.cart = response.data;
           localStorage.setItem('cartId', this.cart.id); // Opslaan van de winkelwagen-ID in localStorage
         } catch (error) {
@@ -91,7 +91,7 @@ export default {
     },
     async fetchCart(cartId) {
       try {
-        const response = await axios.get(`${process.env.VUE_APP_BACKEND_URL}/shoppingcart/api/shoppingcart/${cartId}`);
+        const response = await axios.get(`${process.env.VUE_APP_BACKEND_URL}/shoppingcart/${cartId}`);
         this.cart = response.data;
       } catch (error) {
         console.error('Error fetching cart:', error);
@@ -100,7 +100,7 @@ export default {
     async addToCart(productId) {
       const quantity = this.quantities[productId] || 1; // Default to 1 if no quantity is specified
       try {
-        const response = await axios.post(`${process.env.VUE_APP_BACKEND_URL}/shoppingcart/api/shoppingcart/${this.cart.id}`, {
+        const response = await axios.post(`${process.env.VUE_APP_BACKEND_URL}/shoppingcart/${this.cart.id}`, {
           productId: productId,
           quantity: quantity
         });
@@ -111,7 +111,7 @@ export default {
     },
     async removeFromCart(productId) {
       try {
-        const response = await axios.delete(`${process.env.VUE_APP_BACKEND_URL}/shoppingcart/api/shoppingcart/${this.cart.id}`, {
+        const response = await axios.delete(`${process.env.VUE_APP_BACKEND_URL}/shoppingcart/${this.cart.id}`, {
           productId: productId
         });
         this.cart = response.data;
